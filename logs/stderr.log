@@ -26,3 +26,12 @@ INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\hel
 ERROR:helpers.http_helper:User already exists!
 INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 03:25:29] "[31m[1mPOST /api/user HTTP/1.1[0m" 400 -
 INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\helpers\\http_helper.py', reloading
+ERROR:helpers.http_helper:{'statusCode': 400, 'isSuccess': False, 'responseMessage': 'Invalid email format!', 'data': {}}
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 11:34:30] "[31m[1mPOST /api/user HTTP/1.1[0m" 400 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\app.py', reloading
+ERROR:helpers.http_helper:{'statusCode': 404, 'isSuccess': False, 'responseMessage': 'Wrong username or password!', 'data': {}}
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 11:35:19] "[33mGET /api/user HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\helpers\\http_helper.py', reloading
+ERROR:helpers.http_helper:Signature has expired!
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 11:36:35] "[31m[1mDELETE /api/user HTTP/1.1[0m" 408 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\helpers\\http_helper.py', reloading

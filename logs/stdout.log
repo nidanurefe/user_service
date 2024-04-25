@@ -1,3 +1,22 @@
 ERROR:helpers.http_helper:User saved!
 INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 03:21:16] "[35m[1mPOST /api/user HTTP/1.1[0m" 201 -
 INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\app.py', reloading
+ERROR:helpers.http_helper:{'statusCode': 201, 'isSuccess': True, 'responseMessage': 'User saved', 'data': {}}
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 11:37:57] "[35m[1mPOST /api/user HTTP/1.1[0m" 201 -
+DEBUG:peewee:('SELECT `t1`.`id`, `t1`.`username`, `t1`.`password`, `t1`.`email`, `t1`.`authcode` FROM `user_n` AS `t1` WHERE ((`t1`.`username` = %s) AND (`t1`.`password` = %s))', ['slm', 'd87ba391987de5959f8f297b25dac6a0'])
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 11:38:03] "GET /api/user HTTP/1.1" 200 -
+DEBUG:peewee:('SELECT `t1`.`id`, `t1`.`username`, `t1`.`password`, `t1`.`email`, `t1`.`authcode` FROM `user_n` AS `t1` WHERE (`t1`.`username` = %s)', ['slm'])
+DEBUG:peewee:('SELECT `t1`.`id`, `t1`.`username`, `t1`.`password`, `t1`.`email`, `t1`.`authcode` FROM `user_n` AS `t1` WHERE (`t1`.`username` = %s) LIMIT %s OFFSET %s', ['ardocuk1', 1, 0])
+ERROR:helpers.http_helper:{'statusCode': 404, 'isSuccess': False, 'responseMessage': 'User not found!', 'data': {}}
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 11:38:14] "[33mDELETE /api/user HTTP/1.1[0m" 404 -
+DEBUG:peewee:('SELECT `t1`.`id`, `t1`.`username`, `t1`.`password`, `t1`.`email`, `t1`.`authcode` FROM `user_n` AS `t1` WHERE (`t1`.`username` = %s)', ['slm'])
+DEBUG:peewee:('SELECT `t1`.`id`, `t1`.`username`, `t1`.`password`, `t1`.`email`, `t1`.`authcode` FROM `user_n` AS `t1` WHERE (`t1`.`username` = %s) LIMIT %s OFFSET %s', ['ardocuk2', 1, 0])
+DEBUG:peewee:('DELETE FROM `user_n` WHERE (`user_n`.`id` = %s)', [10])
+ERROR:helpers.http_helper:{'statusCode': 201, 'isSuccess': True, 'responseMessage': 'User is deleted!', 'data': {}}
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 11:38:22] "[35m[1mDELETE /api/user HTTP/1.1[0m" 201 -
+ERROR:helpers.http_helper:Authcode is updated!
+ERROR:helpers.http_helper:{'statusCode': 201, 'isSuccess': True, 'responseMessage': 'Authcode is updated!', 'data': {}}
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 11:38:55] "[35m[1mPUT /api/user/authupdate HTTP/1.1[0m" 201 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\auth_management.py', reloading
+ERROR:helpers.http_helper:{'statusCode': 201, 'isSuccess': True, 'responseMessage': 'Authcode is updated!', 'data': {}}
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 11:39:59] "[35m[1mPUT /api/user/authupdate HTTP/1.1[0m" 201 -

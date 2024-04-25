@@ -7,7 +7,6 @@ import jwt # type: ignore
 import peewee as pw
 
 app = Flask("__main__")
-logger = logging.getLogger(__name__)
 
 
 @app.route('/api/user', methods = ['POST'])
@@ -28,11 +27,9 @@ def add_user():
                         authcode = req['authcode'])
         
         user.save()
-        HttpResponse.saveSuccessLogs("User saved!")
         return HttpResponse().Created("User saved").makeResponse()
     
     else:
-        HttpResponse.saveErrorLogs('Invalid email format!')
         return HttpResponse().BadRequest("Invalid email format!") .makeResponse()
 
 
@@ -44,14 +41,12 @@ def create_token():
 
     if query:
         token = generate_token(req['username'])
-
         return{
             "token" : token,
             "expireDate" : ["exp"]
         }
 
     else:
-        HttpResponse.saveErrorLogs("Wrong username or password!")
         return HttpResponse().NotFound("Wrong username or password!").makeResponse()
 
 
@@ -62,30 +57,20 @@ def delete_user():
     try:
         username = jwt.decode(token, "secret", algorithms=["HS256"])['sub']
         query = User_n.select().where(User_n.username == username)
-
         for user in query:
             if(user.authcode == 2):
                 try: 
                     user_to_delete = User_n.get(User_n.username == req['username'])
                     user_to_delete.delete_instance()
-                    HttpResponse.saveSuccessLogs("User is deleted!")
                     return HttpResponse().Success("User is deleted!") .makeResponse()
                 except pw.DoesNotExist:
                         
-                    HttpResponse.saveErrorLogs("User not found!")
-
                     return HttpResponse().NotFound("User not found!") .makeResponse() 
-
-                
             else:
-
-                HttpResponse.saveErrorLogs("Unauthorized operation attempt!")
-
                 return HttpResponse().Unauthorized("Unauthorized operation attempt!") .makeResponse()
             
         
     except jwt.ExpiredSignatureError:
-        HttpResponse.saveErrorLogs("Signature has expired!")
         return HttpResponse().RequestTimeOut("Signature has expired!") .makeResponse()
     
 
