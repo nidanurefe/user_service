@@ -1,0 +1,3 @@
+ERROR:helpers.http_helper:User saved!
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 03:21:16] "[35m[1mPOST /api/user HTTP/1.1[0m" 201 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\app.py', reloading

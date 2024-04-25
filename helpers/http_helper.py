@@ -1,5 +1,6 @@
 from __future__ import annotations
 from flask import Response, make_response
+import logging
 
 class HttpResponse():
     def __init__(self, statusCode=200, isSuccess=True, responseMessage="", data:dict = {}) -> None:
@@ -49,6 +50,12 @@ class HttpResponse():
         self.isSuccess = True
         self.responseMessage = responseMsg
         return self
+    
+    def Success(self, responseMsg="200 OK"):
+        self.statusCode = 201
+        self.isSuccess = True
+        self.responseMessage = responseMsg
+        return self
 
 
     def makeResponse(self) -> Response: 
@@ -62,3 +69,13 @@ class HttpResponse():
 
     def __getitem__(self, item):
         return self.__dict__[item]
+    
+    def saveErrorLogs(message):
+        logger = logging.getLogger(__name__)
+        logging.basicConfig(filename='./logs/stderr.log', encoding='utf-8', level=logging.DEBUG)
+        return logger.error(message)
+    
+    def saveSuccessLogs(message):
+        logger = logging.getLogger(__name__)
+        logging.basicConfig(filename='./logs/stdout.log', encoding='utf-8', level=logging.DEBUG)
+        return logger.error(message)

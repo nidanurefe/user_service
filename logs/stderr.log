@@ -1,0 +1,28 @@
+ERROR:__main__:Wrong username or password!
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 00:48:43] "[33mGET /api/user HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\app.py', reloading
+ERROR:__main__:Wrong username or password!
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 02:33:19] "[33mGET /api/user HTTP/1.1[0m" 404 -
+DEBUG:peewee:('SELECT `t1`.`id`, `t1`.`username`, `t1`.`password`, `t1`.`email`, `t1`.`authcode` FROM `user_n` AS `t1` WHERE ((`t1`.`username` = %s) AND (`t1`.`password` = %s))', ['nidocuk', 'd87ba391987de5959f8f297b25dac6a0'])
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 02:33:24] "GET /api/user HTTP/1.1" 200 -
+DEBUG:peewee:('SELECT `t1`.`id`, `t1`.`username`, `t1`.`password`, `t1`.`email`, `t1`.`authcode` FROM `user_n` AS `t1`', [])
+DEBUG:peewee:('INSERT INTO `user_n` (`username`, `password`, `email`, `authcode`) VALUES (%s, %s, %s, %s)', ['asdasd', 'd87ba391987de5959f8f297b25dac6a0', 'asdsd@gmail.com', 0])
+DEBUG:peewee:('UPDATE `user_n` SET `username` = %s, `password` = %s, `email` = %s, `authcode` = %s WHERE (`user_n`.`id` = %s)', ['asdasd', 'd87ba391987de5959f8f297b25dac6a0', 'asdsd@gmail.com', 0, 21])
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 02:33:46] "[35m[1mPOST /api/user HTTP/1.1[0m" 201 -
+ERROR:__main__:User already exists!
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 03:20:54] "[31m[1mPOST /api/user HTTP/1.1[0m" 400 -
+DEBUG:peewee:('SELECT `t1`.`id`, `t1`.`username`, `t1`.`password`, `t1`.`email`, `t1`.`authcode` FROM `user_n` AS `t1`', [])
+DEBUG:peewee:('INSERT INTO `user_n` (`username`, `password`, `email`, `authcode`) VALUES (%s, %s, %s, %s)', ['asadaaa', 'd87ba391987de5959f8f297b25dac6a0', 'aasdaa@gmail.com', 2])
+DEBUG:peewee:('UPDATE `user_n` SET `username` = %s, `password` = %s, `email` = %s, `authcode` = %s WHERE (`user_n`.`id` = %s)', ['asadaaa', 'd87ba391987de5959f8f297b25dac6a0', 'aasdaa@gmail.com', 2, 25])
+ERROR:helpers.http_helper:User saved!
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 03:20:59] "[35m[1mPOST /api/user HTTP/1.1[0m" 201 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\helpers\\http_helper.py', reloading
+ERROR:helpers.http_helper:User already exists!
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 03:23:33] "[31m[1mPOST /api/user HTTP/1.1[0m" 400 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\helpers\\http_helper.py', reloading
+ERROR:helpers.http_helper:User already exists!
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 03:25:05] "[31m[1mPOST /api/user HTTP/1.1[0m" 400 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\helpers\\http_helper.py', reloading
+ERROR:helpers.http_helper:User already exists!
+INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 03:25:29] "[31m[1mPOST /api/user HTTP/1.1[0m" 400 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\helpers\\http_helper.py', reloading
