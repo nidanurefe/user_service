@@ -1,8 +1,7 @@
 from peewee import *
-import re 
 
-db = MySQLDatabase('TestSchema', user='arda', password='adana123',
-                         host='34.65.69.42', port=3306)
+db = MySQLDatabase('SchemaName', user='user', password='password',
+                         host='host', port='port')
 
 class User_n(Model):
     username = CharField()
@@ -13,6 +12,4 @@ class User_n(Model):
         database = db
 
 
-    def validate_mail(mail):
-        regex = '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$'
-        return re.match(regex, mail)
+

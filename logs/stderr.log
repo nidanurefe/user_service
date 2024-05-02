@@ -35,3 +35,22 @@ INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\hel
 ERROR:helpers.http_helper:Signature has expired!
 INFO:werkzeug:127.0.0.1 - - [25/Apr/2024 11:36:35] "[31m[1mDELETE /api/user HTTP/1.1[0m" 408 -
 INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\helpers\\http_helper.py', reloading
+ERROR:helpers.http_helper:User already exists!
+ERROR:helpers.http_helper:{'statusCode': 400, 'isSuccess': False, 'responseMessage': 'User already exists!', 'data': {}}
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2024 00:00:00] "[31m[1mPOST /api/user HTTP/1.1[0m" 400 -
+DEBUG:peewee:('SELECT `t1`.`id`, `t1`.`username`, `t1`.`password`, `t1`.`email`, `t1`.`authcode` FROM `user_n` AS `t1`', [])
+DEBUG:peewee:('INSERT INTO `user_n` (`username`, `password`, `email`, `authcode`) VALUES (%s, %s, %s, %s)', ['sldsm', 'd87ba391987de5959f8f297b25dac6a0', 'slmsd@gmail.com', 2])
+DEBUG:peewee:('UPDATE `user_n` SET `username` = %s, `password` = %s, `email` = %s, `authcode` = %s WHERE (`user_n`.`id` = %s)', ['sldsm', 'd87ba391987de5959f8f297b25dac6a0', 'slmsd@gmail.com', 2, 29])
+ERROR:helpers.http_helper:{'statusCode': 201, 'isSuccess': True, 'responseMessage': 'User saved', 'data': {}}
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2024 00:00:10] "[35m[1mPOST /api/user HTTP/1.1[0m" 201 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\app.py', reloading
+ERROR:helpers.http_helper:User already exists!
+ERROR:helpers.http_helper:{'statusCode': 400, 'isSuccess': False, 'responseMessage': 'User already exists!', 'data': {}}
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2024 00:02:04] "[31m[1mPOST /api/user HTTP/1.1[0m" 400 -
+DEBUG:peewee:('SELECT `t1`.`id`, `t1`.`username`, `t1`.`password`, `t1`.`email`, `t1`.`authcode` FROM `user_n` AS `t1` WHERE (`t1`.`username` = %s)', ['slddsfsm'])
+DEBUG:peewee:('SELECT `t1`.`id`, `t1`.`username`, `t1`.`password`, `t1`.`email`, `t1`.`authcode` FROM `user_n` AS `t1`', [])
+DEBUG:peewee:('INSERT INTO `user_n` (`username`, `password`, `email`, `authcode`) VALUES (%s, %s, %s, %s)', ['slddsfsm', 'd87ba391987de5959f8f297b25dac6a0', 'slmdfssd@gmail.com', 2])
+DEBUG:peewee:('UPDATE `user_n` SET `username` = %s, `password` = %s, `email` = %s, `authcode` = %s WHERE (`user_n`.`id` = %s)', ['slddsfsm', 'd87ba391987de5959f8f297b25dac6a0', 'slmdfssd@gmail.com', 2, 30])
+ERROR:helpers.http_helper:{'statusCode': 201, 'isSuccess': True, 'responseMessage': 'User saved', 'data': {}}
+INFO:werkzeug:127.0.0.1 - - [26/Apr/2024 00:02:16] "[35m[1mPOST /api/user HTTP/1.1[0m" 201 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\user_service\\app.py', reloading
