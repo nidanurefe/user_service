@@ -13,7 +13,7 @@ This Flask-based API manages user data including registration, authentication, a
 1. Clone this repository to your local machine:
 2. Install the required Python packages:
 3. Configure the MySQL database settings in `helpers.models.py`:
-Run the Flask application: ```python app.py ```
+4. Run the Flask application: ```python app.py ```
 
 ## API Endpoits 
 - POST /api/user: Create a new user.
